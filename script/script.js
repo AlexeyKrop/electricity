@@ -75,18 +75,20 @@ const openAccordion = () => {
 openAccordion();
 
 // блок проккуртки страницы
-const buttonUp = document.querySelector(".up");
-buttonUp.addEventListener("click", function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+const scrolling = () => {
+  const buttonUp = document.querySelector(".up");
+  buttonUp.addEventListener("click", function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
-  console.log(window.scrollY);
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      buttonUp.classList.add("visible");
-    } else {
+    if (window.scrollY > 300) {
       buttonUp.classList.remove("visible");
+    } else {
+      buttonUp.classList.add("visible");
     }
   });
-});
+};
+scrolling();

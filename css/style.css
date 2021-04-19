@@ -507,6 +507,7 @@ a.absolute {
   margin-bottom: 40px;
 }
 .visible {
+  display: none;
   right: 30px;
   transition: all 400ms;
   transform: rotate(360deg);
