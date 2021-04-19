@@ -1,59 +1,28 @@
 "use strict";
-// модальноe окно
+// модальное окно
 const openModal = () => {
-  const header = document.querySelector(".header"),
-    modalCallback = document.getElementById("callback"),
+  const fancyboxModal = document.querySelectorAll(".fancyboxModal"),
     modalOverlay = document.querySelector(".modal-overlay"),
-    buttonService = document.querySelector(".button-services"),
+    modalCallback = document.getElementById("callback"),
     modalClose = document.querySelector(".modal-close");
-  // открытие модального окна
-  const openMenu = () => {
-    modalCallback.style.display = "block";
-    modalOverlay.style.display = "block";
+  const getMenu = (display) => {
+    modalCallback.style.display = display;
+    modalOverlay.style.display = display;
   };
-  const closeModal = () => {
-    modalCallback.style.display = "none";
-    modalOverlay.style.display = "none";
-  };
-  header.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.matches(".callback-btn")) {
+  fancyboxModal.forEach((item) => {
+    item.addEventListener("click", (event) => {
       event.preventDefault();
-      openMenu();
-    }
+      getMenu("block");
+    });
   });
-  buttonService.addEventListener("click", (event) => {
-    event.preventDefault();
-    openMenu();
-  });
-  // закрытие модального окна
   modalClose.addEventListener("click", () => {
-    closeModal();
+    getMenu("none");
   });
   modalOverlay.addEventListener("click", () => {
-    closeModal();
+    getMenu("none");
   });
 };
 openModal();
-
-// // слайдер
-// const portfolioSlider = () => {
-//   const potfolioContent = document.querySelector(".top-slider"),
-//     portfolioItem = document.querySelectorAll(".item");
-//   let currentIndex = 0;
-//   portfolioItem[1].style.overflow = "visible";
-// };
-// portfolioSlider();
-
-// // слайдер-карусель
-// const sliderCarusel = () => {
-//   const servicesArrow = document.querySelector(".services-arrow");
-//   servicesArrow.addEventListener("click", (event) => {
-//     let target = event.target;
-//     console.log(target);
-//   });
-// };
-// sliderCarusel();
 
 // блок аккордион
 const openAccordion = () => {
@@ -92,3 +61,10 @@ const scrolling = () => {
   });
 };
 scrolling();
+
+const imgWrapper = document.querySelectorAll(".absolute");
+imgWrapper.forEach((item) => {
+  item.addEventListener("click", () => {
+    console.log("привет");
+  });
+});
