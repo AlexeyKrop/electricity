@@ -132,7 +132,7 @@ const sendForm = () => {
   statusMessage.style.color = "red";
   const inputs = document.querySelectorAll("input"),
     modalCallback = document.getElementById("callback"),
-    modalClose = document.querySelector(".modal-close");
+    modalOverlay = document.querySelector(".modal-overlay");
   const cleanInputs = () => {
     inputs.forEach((item) => {
       item.value = "";
@@ -171,7 +171,7 @@ const sendForm = () => {
           }, 2000);
 
           setTimeout(() => {
-            modalClose.style.display = "none";
+            modalOverlaygit.style.display = "none";
             modalCallback.style.display = "none";
           }, 2000);
         })
