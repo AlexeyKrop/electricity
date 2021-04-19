@@ -171,7 +171,7 @@ const sendForm = () => {
           }, 2000);
 
           setTimeout(() => {
-            modalOverlaygit.style.display = "none";
+            modalOverlay.style.display = "none";
             modalCallback.style.display = "none";
           }, 2000);
         })
