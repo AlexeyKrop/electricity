@@ -23,7 +23,6 @@ const checkData = () => {
       } else if (target.placeholder === "Телефон*") {
         if (target.value.length !== 18) {
           target.style.border = "2px solid red";
-          alert("Введите корректный номер телефона");
           formBtn.disabled = true;
         }
       }
