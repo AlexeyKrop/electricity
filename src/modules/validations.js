@@ -12,9 +12,8 @@ const validations = () => {
       if (target.placeholder === "Ваше имя") {
         target.value = target.value.replace(/[^А-Яа-яЁё\ ]/, "");
       } else if (target.placeholder === "Телефон*") {
-        target.value = target.value.replace(/[^7+]/, "");
         maskPhone(".tel");
-        if (target.value.length === 18) {
+        if (target.value.length === 12) {
           target.style.border = "2px solid green";
           formBtn.disabled = false;
         }

@@ -21,7 +21,7 @@ const checkData = () => {
           target.value = "";
         }
       } else if (target.placeholder === "Телефон*") {
-        if (target.value.length !== 18) {
+        if (target.value.length !== 12) {
           target.style.border = "2px solid red";
           formBtn.disabled = true;
         }
