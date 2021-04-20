@@ -18,7 +18,6 @@ const checkData = () => {
             .join(" ");
         }
         if (target.value.search(/[^A-Za-z]/)) {
-          // alert("Необходимо ввести имя на русском языке");
           target.value = "";
         }
       } else if (target.placeholder === "Телефон*") {

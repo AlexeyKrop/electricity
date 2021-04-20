@@ -1,17 +1,17 @@
 const slider = () => {
   const topSlider = document.querySelector(".top-slider"),
+    table = document.querySelectorAll(".table"),
     itemSlide = document.querySelectorAll(".item");
-  let currentImageUrl = 0,
-    imageUrls = [];
-  imageUrls.push("url(images/slide1.jpg)");
-  imageUrls.push("url(images/slide2.jpg)");
-  imageUrls.push("url(images/slide3.jpg)");
+  let currentSlide = 0;
   const changeSlide = () => {
-    itemSlide[0].style.backgroundImage = imageUrls[currentImageUrl];
-    currentImageUrl++;
-    if (currentImageUrl === itemSlide.length) {
-      currentImageUrl = 0;
+    table[currentSlide].classList.remove("active");
+    itemSlide[currentSlide].style.display = "none";
+    currentSlide++;
+    if (currentSlide >= table.length) {
+      currentSlide = 0;
     }
+    itemSlide[currentSlide].style.display = "block";
+    table[currentSlide].classList.add("active");
   };
   setInterval(changeSlide, 3000);
 };
